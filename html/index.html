@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title itemprop="name">UI Engineer Coding Exercise</title>
+	<meta charset="utf-8" />
+    <base href="/">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#6571e6">
+    <link rel="icon" type="image/png" sizes="16x16" href="globe.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=1">
+    <style type="text/css">
+html { overflow: hidden; overflow-y: auto; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; line-height: normal; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; -ms-overflow-style: scrollbar; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); scroll-behavior: smooth; -ms-touch-action: manipulation; touch-action: manipulation }
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section { display: block }
+body { margin: 0; cursor: default; font-weight: normal; font-size: 16px; line-height: 1.5; color: #333333; text-align: left; background-color: #ffffff; letter-spacing: 0.1px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-overflow-scrolling: touch; scroll-behavior: smooth }
+* { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box }
+ul { padding: 0px; margin: 0px; }
+li { list-style: none; }
+button, a { cursor: pointer; }
+button:focus { outline: none }
+button [type="button"], [type="reset"], [type="submit"] { -webkit-appearance: button }
+.clearfix { *zoom: 1; clear: both }
+.clearfix:before, div .clearfix:after { content: " "; display: table }
+.clearfix:after { clear: both }
+._center { text-align: center; }
+
+.container { width: 100%; max-width: 960px; margin-left: auto; margin-right: auto; }
+._wrapper { padding: 16px 16px 24px 16px; }
+._headerTitle { font-size: 18px; margin: 0px; padding: 8px 0px; font-weight: 400; background-color: #333333; color: #fff  }
+
+._cardHold li { margin-bottom: 8px; }
+._cardHold li div { width: calc(100% - 6px); padding: 8px 0px; margin-left: 6px; background-color: #EFEFEF; }
+._btn { min-width:100px; margin-bottom: 16px; border-radius: 4px; text-align: center; padding: 8px 10px; font-size: 12px; color: #fff; background-color:#72C3DC; border:#72C3DC solid 1px; box-shadow: 0px 2px 0px 2px #2B8EAD; text-transform: uppercase; display: inline-block; transition: all .12s; }
+._btn:hover { box-shadow: 0px 3px 0px 3px #2B8EAD; }
+
+._cardHold li.item_01 {background-color: #6F98A8;}
+._cardHold li.item_02 {background-color: #2B8EAD;}
+._cardHold li.item_03 {background-color: #2F454E;}
+._cardHold li.item_04 {background-color: #2B8EAD;}
+._cardHold li.item_05 {background-color: #2F454E;}
+._cardHold li.item_06 {background-color: #BFBFBF;}
+._cardHold li.item_07 {background-color: #BFBFBF;}
+._cardHold li.item_08 {background-color: #6F98A8;}
+._cardHold li.item_09 {background-color: #2F454E;}
+
+._author { font-size: 12px; margin-top: 16px; margin-bottom: 16px; }
+
+.sidebar div { display: inline-block; margin-left: 4px; margin-right: 4px; }
+.sidebar ._btn { width: calc(100% - 24px - 24px); }
+
+@media only screen and (min-width: 768px) {
+._headerTitle { background-color: transparent; color: #333333; margin-bottom: 8px;}
+._wrapper { background-color: #EFEFEF; border-top: #BFBFBF solid 3px; padding: 0px 0px 24px 0px; }
+._wrapper ._inner { display: flex; direction: rtl; }
+.container { margin-top: 32px; }
+.sidebar { width: 300px; padding-top: 24px; display: inline-block; direction: ltr; }
+
+.sidebar div { display: block; margin: 0px;}
+._cardHold { width: calc(100% - 300px); display: inline-block; direction: ltr; }
+._cardHold li { width: calc(100% / 3); height: 220px; float: left; margin: 0px; }
+._cardHold li div { width: 100%; display: flex; margin: 0px; height: 100%; justify-content: center; align-items: center; color: #fff; font-size: 60px; background-color: transparent; }
+
+}
+
+    </style>
+
+</head>
+<body>
+
+	<section>
+		<div class="container">
+			 
+			<h1 class="_headerTitle _center">Suffle and Short</h1>
+			<div class="_wrapper">
+				<div class="_inner">
+					<div class="sidebar _center">
+						<div><button class="_btn" onclick="changeTiles('shuffle')">Suffle</button></div>
+						<div><button class="_btn" onclick="changeTiles('sort')">Sort</button></div>
+					</div>
+					<div class="_cardHold">
+						<ul class="_center" id="p_cont">
+							<li class="item_01"><div>1</div></li>
+							<li class="item_02"><div>2</div></li>
+							<li class="item_03"><div>3</div></li>
+							<li class="item_04"><div>4</div></li>
+							<li class="item_05"><div>5</div></li>
+							<li class="item_06"><div>6</div></li>
+							<li class="item_07"><div>7</div></li>
+							<li class="item_08"><div>8</div></li>
+							<li class="item_09"><div>9</div></li>
+						</ul>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<p class="_center _author"><em>Short and suffle by Ganesh Kumawat</em></p>
+			</div>
+		</div>
+	</section>
+
+<script type="text/javascript">
+
+		var p_cont = document.getElementById('p_cont')
+		var elements = Array.from(Array(9), (_, i) => i + 1)
+		function changeTiles(action){
+			if(action == 'shuffle'){
+				elements.sort(()=>{return 0.5-Math.random()})
+			}
+			if(action == "sort"){
+				elements.sort()	
+			}
+			orderTiles()
+		}
+
+		function orderTiles(){
+			p_cont.innerHTML = ""
+			for(i=0;i<elements.length;i++){
+				li = document.createElement('li')
+				li.setAttribute('class', 'item_0'+elements[i].toString())
+				div = document.createElement('div')
+				div.innerHTML = elements[i].toString()
+				li.appendChild(div)
+				p_cont.appendChild(li)
+
+			}
+		}
+</script>
+</body>
+</html>
